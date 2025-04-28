@@ -1,0 +1,26 @@
+﻿@page "/counter"
+@using ConalepMaui2025.Repository
+@inject IRepository myService;
+
+
+
+@inject ConalepMaui2025.Services.DatabaseChecker DbChecker
+
+<button @onclick="ProbarConexion">Probar conexión</button>
+
+@if (resultado != null)
+{
+    <p>@(resultado.Value ? "✅ Conexión exitosa" : "❌ Conexión fallida")</p>
+}
+
+@code {
+
+   
+    bool? resultado = null;
+
+    private async Task ProbarConexion()
+    {
+        var prueba = await myService.GetProyeccionFinalModels();
+        resultado = await DbChecker.VerificarConexionAsync();
+    }
+}
