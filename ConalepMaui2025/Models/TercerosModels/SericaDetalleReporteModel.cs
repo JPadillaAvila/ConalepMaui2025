@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace ConalepMaui2025.Models
+namespace ConalepMaui2025.Models.TercerosModels
 {
     [Keyless]
     public class SericaDetalleReporteModel

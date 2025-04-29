@@ -1,4 +1,4 @@
-﻿namespace ConalepMaui2025.Models
+﻿namespace ConalepMaui2025.Models.TrimestralModels
 {
     public class TrimestralBY1Model
     {
@@ -10,6 +10,6 @@
         public int TipDOC { get; set; }
         public int TipADMM { get; set; }
         public int TipDOCC { get; set;}
-        public Decimal SUMA { get; set; }
+        public decimal SUMA { get; set; }
     }
 }

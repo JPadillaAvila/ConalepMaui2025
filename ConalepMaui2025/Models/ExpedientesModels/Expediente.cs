@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ConalepMaui2025.Models
+namespace ConalepMaui2025.Models.ExpedientesModels
 {
 
 
