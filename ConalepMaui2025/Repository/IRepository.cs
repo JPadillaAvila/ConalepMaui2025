@@ -1,4 +1,7 @@
 ﻿using ConalepMaui2025.Models;
+using ConalepMaui2025.Models.ExpedientesModels;
+using ConalepMaui2025.Models.TercerosModels;
+using ConalepMaui2025.Models.TrimestralModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

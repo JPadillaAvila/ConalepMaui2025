@@ -1,4 +1,7 @@
 ﻿using ConalepMaui2025.Models;
+using ConalepMaui2025.Models.ExpedientesModels;
+using ConalepMaui2025.Models.TercerosModels;
+using ConalepMaui2025.Models.TrimestralModels;
 using ConalepMaui2025.Resources.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

@@ -1,4 +1,4 @@
-﻿using ConalepMaui2025.Models;
+﻿using ConalepMaui2025.Models.ExpedientesModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
