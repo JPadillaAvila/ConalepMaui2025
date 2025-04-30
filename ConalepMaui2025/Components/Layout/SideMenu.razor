@@ -1,0 +1,75 @@
+﻿<!-- Shared/SideMenu.razor -->
+<div class="sidebar bg-dark text-white d-flex flex-column">
+    <div class="p-3 border-bottom">
+        <a href="/" class="d-flex align-items-center text-white text-decoration-none">
+            <img src="/logo-cnp.png" alt="Logo" style="width:40px; height:32px;" />
+            <span class="fs-5 fw-bold ms-2">Conalep</span>
+        </a>
+    </div>
+
+    <div class="flex-grow-1 overflow-auto">
+        <ul class="nav flex-column px-2">
+            <!-- Expedientes -->
+            <li class="nav-item mt-2">
+                <span class="text-uppercase fw-semibold small">Expedientes</span>
+                <ul class="nav flex-column ms-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/ListaExpediente">📄 Lista de expedientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/CrearExpediente">➕ Crear expediente</a>
+                    </li>
+              
+                </ul>
+            </li>
+
+            <!-- Nóminas -->
+            <li class="nav-item mt-3">
+                <span class="text-uppercase fw-semibold small">Nóminas</span>
+                <ul class="nav flex-column ms-3">
+                    <li><a class="nav-link text-white" href="/ReportesTerceros">💰 PAGOS DE TERCEROS</a></li>
+                    <li><a class="nav-link text-white" href="/Download-excel">📥 Docentes</a></li>
+                    <li><a class="nav-link text-white" href="/upload-file">📤 Honorarios</a></li>
+                    <li><a class="nav-link text-white" href="/list-blobs">📦 Capacitacion</a></li>
+                    <li><a class="nav-link text-white" href="/reporteTrimestral">📊 Reportes trimestrales</a></li>
+                    <li><a class="nav-link text-white" href="/reportesPartidas">🧾 Reportes prueba</a></li>
+                    <li><a class="nav-link text-white" href="/Presupuesto">📆 PRESUPUESTO</a></li>
+                    <li><a class="nav-link text-white" href="/Siri">🖥️ SIRI</a></li>
+                </ul>
+            </li>
+
+            <!-- Ejemplo -->
+            <li class="nav-item mt-3">
+                <span class="text-uppercase fw-semibold small">Ejemplo</span>
+                <ul class="nav flex-column ms-3">
+                    <li><a class="nav-link text-white" href="/simple-form">📋 Simple Form</a></li>
+                    <li><a class="nav-link text-white" href="/simple-datagrid">📑 Simple DataGrid</a></li>
+                </ul>
+            </li>
+
+            <!-- Utilidades -->
+            <li class="nav-item mt-3">
+                <span class="text-uppercase fw-semibold small">Utilidades</span>
+                <ul class="nav flex-column ms-3">
+                    <li><a class="nav-link text-white" href="/Usuarios">👤 Usuarios</a></li>
+                    <li><a class="nav-link text-white" href="/Renapo">✅ Renapo</a></li>
+                    <li><a class="nav-link text-white" href="/SatId">🧬 SatID</a></li>
+                    <li><a class="nav-link text-white" href="/ConfrontaISSSTE">📄 Confronta ISSSTE</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: #1e1e2f;
+        overflow-y: auto;
+    }
+</style>

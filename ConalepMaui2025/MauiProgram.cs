@@ -6,7 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using ConalepMaui2025.Resources.Data;
 using ConalepMaui2025.Services;
 using ConalepMaui2025.Repository;
-
+using Blazorise;
+using Blazorise.Bootstrap5;
+using Blazorise.Icons.FontAwesome;
 
 public static class MauiProgram
 {
@@ -27,27 +29,36 @@ public static class MauiProgram
         // Obtener la cadena de conexión de la configuración
         var mysqlconnectionString = config.GetConnectionString("MysqlConnection");
 
-        // Validar que la cadena de conexión no sea nula o vacía
         if (string.IsNullOrEmpty(mysqlconnectionString))
         {
             throw new InvalidOperationException("La cadena de conexión 'MysqlConnection' no está configurada en appsettings.json.");
         }
 
+        // Configurar Entity Framework
         builder.Services.AddDbContext<ApplicationDbContextMySQL>(options =>
             options.UseMySQL(mysqlconnectionString));
 
+        // Agregar servicios principales
+        builder.Services.AddSingleton<IConfiguration>(config);
+        builder.Services.AddTransient<IRepository, Repository>();
+        builder.Services.AddSingleton(new DatabaseChecker(mysqlconnectionString));
+
+        // Configurar Blazor y Blazorise
+        // Configurar Blazor y Blazorise
+        builder.Services.AddMauiBlazorWebView();
+
+        builder.Services
+            .AddBlazorise(options => { options.Immediate = true; })
+            .AddBootstrap5Providers()
+            .AddFontAwesomeIcons();
+
+      
         builder
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             });
-
-        builder.Services.AddSingleton<IConfiguration>(config);
-        builder.Services.AddMauiBlazorWebView();
-        builder.Services.AddTransient<IRepository, Repository>();
-
-        builder.Services.AddSingleton(new DatabaseChecker(mysqlconnectionString));
 
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();

@@ -1,7 +1,7 @@
 ﻿using ConalepMaui2025.Dto;
 using System.ComponentModel.DataAnnotations;
 
-namespace ConalepMaui2025.Models
+namespace ConalepMaui2025.Models.OtherModels
 {
     public class SatIdData : Domicilio
     {
