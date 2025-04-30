@@ -1,5 +1,7 @@
 ﻿using ConalepMaui2025.Models;
 using ConalepMaui2025.Models.ExpedientesModels;
+using ConalepMaui2025.Models.OtherModels;
+using ConalepMaui2025.Models.ProyeccionModels;
 using ConalepMaui2025.Models.TercerosModels;
 using ConalepMaui2025.Models.TrimestralModels;
 using System;
@@ -72,8 +74,8 @@ namespace ConalepMaui2025.Repository
         //pruebas para los conceptos para proyeccion 
         public Task<List<PartidasModel>> GetPartidas(string FuenteF);
         // SIRI
-        public Task<List<SiriAltaModel>> GetSiriAltaModels();
-        public Task<List<LineaSiriAltaModel>> GetSiriLineaAlta();
-        public Task<List<LineaSiriBajaModel>> GetSiriLineaBaja();
+        //public Task<List<SiriAltaModel>> GetSiriAltaModels();
+        //public Task<List<LineaSiriAltaModel>> GetSiriLineaAlta();
+        //public Task<List<LineaSiriBajaModel>> GetSiriLineaBaja();
     }
 }

@@ -1,5 +1,7 @@
 ﻿using ConalepMaui2025.Models;
 using ConalepMaui2025.Models.ExpedientesModels;
+using ConalepMaui2025.Models.OtherModels;
+using ConalepMaui2025.Models.ProyeccionModels;
 using ConalepMaui2025.Models.TercerosModels;
 using ConalepMaui2025.Models.TrimestralModels;
 using ConalepMaui2025.Resources.Data;
@@ -2252,127 +2254,127 @@ namespace ConalepMaui2025.Repository
         }
 
         // EMPIEZA SIRI
-        public async Task<List<SiriAltaModel>> GetSiriAltaModels()
-        {
-            var connectionString = _connectionString;
-            var result = new List<SiriAltaModel>();
+        //public async Task<List<SiriAltaModel>> GetSiriAltaModels()
+        //{
+        //    var connectionString = _connectionString;
+        //    var result = new List<SiriAltaModel>();
 
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("GetClavesPartidasPorFuente1", connection))
+        //    using (var connection = new MySqlConnection(connectionString))
+        //    {
+        //        await connection.OpenAsync();
+        //        using (var command = new MySqlCommand("GetClavesPartidasPorFuente1", connection))
 
-                {
+        //        {
 
-                    command.CommandType = CommandType.StoredProcedure;
+        //            command.CommandType = CommandType.StoredProcedure;
 
-                    using (var reader = await command.ExecuteReaderAsync())
-                    {
-                        try
-                        {
-                            while (await reader.ReadAsync())
-                            {
+        //            using (var reader = await command.ExecuteReaderAsync())
+        //            {
+        //                try
+        //                {
+        //                    while (await reader.ReadAsync())
+        //                    {
 
-                                result.Add(new SiriAltaModel
-                                {
-                                    TMOV = reader.GetString("TMOV"),
-                                    rfc = reader.GetString("rfc"),
-                                    curp = reader.GetString("curp"),
-                                    NOMBRE = reader.GetString("NOMBRE"),
-                                    APE_PAT = reader.GetString("APE_PAT"),
-                                });
+        //                        result.Add(new SiriAltaModel
+        //                        {
+        //                            TMOV = reader.GetString("TMOV"),
+        //                            rfc = reader.GetString("rfc"),
+        //                            curp = reader.GetString("curp"),
+        //                            NOMBRE = reader.GetString("NOMBRE"),
+        //                            APE_PAT = reader.GetString("APE_PAT"),
+        //                        });
 
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Error: {ex.Message}");
-                        }
-                    }
-                }
-            }
-            return result;
-        }
+        //                    }
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    Console.WriteLine($"Error: {ex.Message}");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
 
-        public async Task<List<LineaSiriAltaModel>> GetSiriLineaAlta()
-        {
-            var connectionString = _connectionString;
-            var result = new List<LineaSiriAltaModel>();
+        //public async Task<List<LineaSiriAltaModel>> GetSiriLineaAlta()
+        //{
+        //    var connectionString = _connectionString;
+        //    var result = new List<LineaSiriAltaModel>();
 
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("GetDetalleAltaBim", connection))
+        //    using (var connection = new MySqlConnection(connectionString))
+        //    {
+        //        await connection.OpenAsync();
+        //        using (var command = new MySqlCommand("GetDetalleAltaBim", connection))
 
-                {
+        //        {
 
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@tablaDetalleAltaBim", "detallealta_bim4");
-
-
-                    using (var reader = await command.ExecuteReaderAsync())
-                    {
-                        try
-                        {
-                            while (await reader.ReadAsync())
-                            {
-
-                                result.Add(new LineaSiriAltaModel
-                                {
-                                    Linea = reader.GetString("Linea")
-                                });
-
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Error: {ex.Message}");
-                        }
-                    }
-                }
-            }
-            return result;
-        }
-
-        public async Task<List<LineaSiriBajaModel>> GetSiriLineaBaja()
-        {
-            var connectionString = _connectionString;
-            var result = new List<LineaSiriBajaModel>();
-
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                await connection.OpenAsync();
-                using (var command = new MySqlCommand("GetDetalleAltaBim", connection))
-
-                {
-
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@tablaDetalleAltaBim", "detallealta_bim4");
+        //            command.CommandType = CommandType.StoredProcedure;
+        //            command.Parameters.AddWithValue("@tablaDetalleAltaBim", "detallealta_bim4");
 
 
-                    using (var reader = await command.ExecuteReaderAsync())
-                    {
-                        try
-                        {
-                            while (await reader.ReadAsync())
-                            {
+        //            using (var reader = await command.ExecuteReaderAsync())
+        //            {
+        //                try
+        //                {
+        //                    while (await reader.ReadAsync())
+        //                    {
 
-                                result.Add(new LineaSiriBajaModel
-                                {
-                                    Linea = reader.GetString("Linea")
-                                });
+        //                        result.Add(new LineaSiriAltaModel
+        //                        {
+        //                            Linea = reader.GetString("Linea")
+        //                        });
 
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Error: {ex.Message}");
-                        }
-                    }
-                }
-            }
-            return result;
-        }
+        //                    }
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    Console.WriteLine($"Error: {ex.Message}");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
+
+        //public async Task<List<LineaSiriBajaModel>> GetSiriLineaBaja()
+        //{
+        //    var connectionString = _connectionString;
+        //    var result = new List<LineaSiriBajaModel>();
+
+        //    using (var connection = new MySqlConnection(connectionString))
+        //    {
+        //        await connection.OpenAsync();
+        //        using (var command = new MySqlCommand("GetDetalleAltaBim", connection))
+
+        //        {
+
+        //            command.CommandType = CommandType.StoredProcedure;
+        //            command.Parameters.AddWithValue("@tablaDetalleAltaBim", "detallealta_bim4");
+
+
+        //            using (var reader = await command.ExecuteReaderAsync())
+        //            {
+        //                try
+        //                {
+        //                    while (await reader.ReadAsync())
+        //                    {
+
+        //                        result.Add(new LineaSiriBajaModel
+        //                        {
+        //                            Linea = reader.GetString("Linea")
+        //                        });
+
+        //                    }
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    Console.WriteLine($"Error: {ex.Message}");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
     }
 }
 

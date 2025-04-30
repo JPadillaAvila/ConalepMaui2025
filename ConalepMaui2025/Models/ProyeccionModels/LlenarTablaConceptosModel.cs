@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.Pkcs;
 
-namespace ConalepMaui2025.Models
+namespace ConalepMaui2025.Models.ProyeccionModels
 {
     public class LlenarTablaConceptosModel
     {

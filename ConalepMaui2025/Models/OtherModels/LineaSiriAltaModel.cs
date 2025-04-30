@@ -1,4 +1,4 @@
-﻿namespace ConalepMaui2025.Models
+﻿namespace ConalepMaui2025.Models.OtherModels
 {
     public class LineaSiriAltaModel
     {
